@@ -1,6 +1,6 @@
 # Watermeter - S0 - Sensor
 
-Sensor to create impulses from a watermeter.
+Sensor to create electronic impulses from a watermeter.
 
 The HOA1405-002 reflective sensor is mounted to a watermeter, pointing to a rotating disk under water, which has alternating black and reflective areas. The signal from the photo transistor is then read via an analog input of an Atmega328P (maybe a bit oversized). Via Arduino sketch the signal is analyzed and the Atmega328P creates an impulse (5ms) for each black-reflective transition via a digital output.
 
