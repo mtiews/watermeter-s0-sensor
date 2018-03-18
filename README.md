@@ -1,4 +1,4 @@
-#Watermeter - S0 - Sensor
+# Watermeter - S0 - Sensor
 
 Sensor to create impulses from a watermeter.
 
@@ -13,8 +13,11 @@ Sensor is based on:
 * an Arduino sketch and
 * and simple case for the PCB.
 
-![Circuit](circuit/watermeter.png "Circuit" "width:60%;")
-![Watermeter](assets/watermeter.jpg "Watermeter" "width:50%")
-![Watermeter](assets/watermeter_with_sensor_1.jpg "Watermeter" "width:50%")
-![PCB](assets/pcb.jpg "PCB" "width:50%")
+![Circuit](circuit/watermeter.png)
+
+![Watermeter](assets/watermeter.jpg)
+
+![Watermeter](assets/watermeter_with_sensor_1.jpg)
+
+![PCB](assets/pcb.jpg)
 
