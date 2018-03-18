@@ -45,7 +45,7 @@ void readInputAndPulse() {
       active = false;
     }
   }
-  else if(!active) {
+  else {
     if(aval < (LOWER_THRESHOLD + HYSTERESIS)) {
       active = true;
       // Pulse output if switching from un-active to active
