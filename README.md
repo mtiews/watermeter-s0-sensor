@@ -8,12 +8,16 @@ I'm currently using this sensor together with this [Arduino S0 sensor](https://g
 
 Sensor is based on:
 * a HOA1405-002 Honeywell reflective sensor
-* a watermeter mount for the sensor
+* a watermeter mount for the sensor (STL file for 3D printing)
 * an Atmega328P based circuit to read the sensor signals and generate the impulses
 * an Arduino sketch and
-* and simple case for the PCB.
+* a simple case for the PCB (STL file for 3D printing).
 
 ![Circuit](circuit/watermeter.png)
+
+![Circuit](mount_and_case/watermeter_hoa1405_sensor_mount.png)
+
+![Circuit](mount_and_case/watermeter_circuit_case.png)
 
 ![Watermeter](assets/watermeter.jpg)
 
