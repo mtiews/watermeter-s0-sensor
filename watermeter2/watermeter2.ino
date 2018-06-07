@@ -16,51 +16,40 @@
 // # along with this plugin. If not, see <http://www.gnu.org/licenses/>.
 // #########################################################################
 
+// Updated version now using an inductive sensor (NPN) pulling the sensor output to ground
+// Change was required due to the fact, that the watermeter was changed and the old solution
+// did not work any more!
+
 #define WM_INPUT_PIN A0
 #define WM_LED_PIN 8
 #define WM_OUTPUT_PIN 7
 
-#define HYSTERESIS 100
-#define UPPER_THRESHOLD 500
-#define LOWER_THRESHOLD 200
-
-bool active = false;
+bool prevPinstate = false;
 
 void setup() {
   Serial.begin(115200);
+  pinMode(WM_INPUT_PIN, INPUT_PULLUP);
   pinMode(WM_LED_PIN, OUTPUT);
   pinMode(WM_OUTPUT_PIN, OUTPUT);
 }
 
 void loop() {
   readInputAndPulse();
-  switchLed();
 }
 
 void readInputAndPulse() {
-  int aval = analogRead(A0);
-  
-  if(active) {
-    if(aval > (UPPER_THRESHOLD - HYSTERESIS)) {
-      active = false;
-    }
-  }
-  else {
-    if(aval < (LOWER_THRESHOLD + HYSTERESIS)) {
-      active = true;
-      // Pulse output if switching from un-active to active
-      digitalWrite(WM_OUTPUT_PIN, HIGH);  
-      delay(5);
+  boolean pinstate = digitalRead(WM_INPUT_PIN);
+
+  // ONLY react on state changes 
+  // Important: this could be done in an isr as well, but in isrs delay() does not
+  // work, so this has to be done then in the main loop with counting millis etc. 
+  if(!pinstate && prevPinstate) {
+      digitalWrite(WM_OUTPUT_PIN, HIGH); 
+      digitalWrite(WM_LED_PIN, HIGH); 
+      delay(100);
       digitalWrite(WM_OUTPUT_PIN, LOW);  
-    }
+      digitalWrite(WM_LED_PIN, LOW); 
   }
+  prevPinstate = pinstate;
 }
 
-void switchLed() {
-  if(active) {
-    digitalWrite(WM_LED_PIN, HIGH);
-  }
-  else {
-    digitalWrite(WM_LED_PIN, LOW); 
-  }
-}
