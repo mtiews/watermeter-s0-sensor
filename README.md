@@ -20,13 +20,10 @@ Sensor is based on:
 ![Circuit](circuit/watermeter.png)
 
 ![Circuit](mount_and_case/watermeter_hoa1405_sensor_mount.png)
-
 ![Circuit](mount_and_case/watermeter_circuit_case.png)
 
 ![Watermeter](assets/watermeter.jpg)
-
 ![Watermeter](assets/watermeter_with_sensor_1.jpg)
-
 ![PCB](assets/pcb.jpg)
 
 ## Version 2 - with LJ18A3-8-Z/BX inductive sensor
@@ -42,4 +39,5 @@ Required changes:
 * New designed watermeter mount for inductive sensor
 
 ![Watermeter](mount_and_case/watermeter_inductive_sensor_mount.png)
+
 ![Watermeter](assets/watermeter2_with_sensor.jpg)
